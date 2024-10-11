@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path, { resolve } from 'path';
 import viteCompression from 'vite-plugin-compression';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,10 +15,20 @@ export default defineConfig({
       algorithm: 'gzip',
       ext: '.gz',
     }),
+    visualizer({ open: false }),
   ],
   resolve: {
     alias: {
       '@': path.resolve('./src'),
+    },
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: '', //设置请求地址
+        changeOrigin: true, //是否跨域
+        rewrite: (path) => path.replace(/^\/api/, ''), //重写地址
+      },
     },
   },
   build: {
