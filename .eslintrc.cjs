@@ -33,13 +33,13 @@ module.exports = {
       ],
       "@typescript-eslint/ban-ts-comment": "off", //允许使用@ts-ignore
       "@typescript-eslint/no-non-null-assertion": "off", //允许使用非空断言
-      "no-console": [
+      "no-console": process.env.NODE_ENV === 'production' ? [
         //提交时不允许有console.log
         "warn",
         {
           allow: ["warn", "error"],
         },
-      ],
+      ] : 'off',
       "no-debugger": "warn", //提交时不允许有debugger
     },
   };
