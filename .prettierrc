@@ -5,5 +5,16 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "all",
-    "bracketSpacing": true
+    "bracketSpacing": true,
+    "useTabs": false,
+    "vueIndentScriptAndStyle": true,
+    "quoteProps": "as-needed",
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": false,
+    "arrowParens": "always",
+    "insertPragma": false,
+    "requirePragma": false,
+    "proseWrap": "never",
+    "htmlWhitespaceSensitivity": "strict",
+    "rangeStart": 0
 }
