@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <router-view v-slot="{ Component }">
     <Transition name="fade" mode="out-in">
@@ -7,5 +5,7 @@
     </Transition>
   </router-view>
 </template>
+
+<script setup lang="ts"></script>
 
 <style scoped></style>
